@@ -1,6 +1,6 @@
 <?php
 // Change this to your connection info.
-$DATABASE_HOST = 'localhost';
+$DATABASE_HOST = 'MYSQLCONNSTR_localdb';
 $DATABASE_USER = 'crsdbuser';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'mycsrdb';
