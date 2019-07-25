@@ -1,8 +1,8 @@
 <?php
 // Change this to your connection info.
-$DATABASE_HOST = 'MYSQLCONNSTR_localdb';
+$DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'crsdbuser';
-$DATABASE_PASS = '';
+$DATABASE_PASS = '##12345';
 $DATABASE_NAME = 'mycsrdb';
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
