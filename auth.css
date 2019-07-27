@@ -7,8 +7,8 @@ body {
 .rlform {
 	/* variables */
 	--color-primary: #042cdf;
-	--color-grey: rgb(0, 0, 0);
-	--color-dark: rgba(7, 12, 19, 0.719);
+	--color-grey: rgba(0, 102, 255, 0.06);
+	--color-dark: rgb(3, 5, 8);
 	--color-semidark: rgba(25, 104, 223, 0.842);
 
 	text-align: center;
