@@ -7,7 +7,7 @@ session_start();// Starting Session
 if (isset($_SESSION['login_id'])) {
       $user_id = $_SESSION['login_id'];
 
-$Squery = "SELECT fullName from account where id = ? LIMIT 1";
+$Squery = "SELECT fullName from customers where id = ? LIMIT 1";
 
 // To protect MySQL injection for Security purpose
 $stmt = $conn->prepare($Squery);

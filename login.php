@@ -23,7 +23,7 @@ $password = $_POST['password'];
 // Make a connection with MySQL server.
 include('config.php');
 
-$sQuery = "SELECT id, password from account where email=? LIMIT 1";
+$sQuery = "SELECT id, password from customers where email=? LIMIT 1";
 
 // To protect MySQL injection for Security purpose
 $stmt = $conn->prepare($sQuery);

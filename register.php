@@ -25,8 +25,8 @@ $hash = password_hash($password, PASSWORD_DEFAULT);
 // Make a connection with MySQL server.
 include('config.php');
 
-$sQuery = "SELECT id from account where email=? LIMIT 1";
-$iQuery = "INSERT Into account (fullName, email, password) values(?, ?, ?)";
+$sQuery = "SELECT id from customers where email=? LIMIT 1";
+$iQuery = "INSERT Into customers (fullName, email, password) values(?, ?, ?)";
 
 // To protect MySQL injection for Security purpose
 $stmt = $conn->prepare($sQuery);
