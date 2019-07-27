@@ -1,54 +1,105 @@
 <?php
-// Change this to your connection info.
-$DATABASE_HOST = '127.0.0.1:49399';
-$DATABASE_USER = 'azure';
-$DATABASE_PASS = '6#vWHD_$';
-$DATABASE_NAME = 'mycrsdb';
-// Try and connect using the info above.
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-if (mysqli_connect_errno()) {
-	// If there is an error with the connection, stop the script and display the error.
-	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+session_start();// Starting Session
+//if session exit, user nither need to signin nor need to signup
+if(isset($_SESSION['login_id'])){
+  if (isset($_SESSION['pageStore'])) {
+      $pageStore = $_SESSION['pageStore'];
+header("location: $pageStore"); // Redirecting To Profile Page
+    }
 }
+//Register progess start, if user press the signup button
+if (isset($_POST['signUp'])) {
+if (empty($_POST['fullName']) || empty($_POST['email']) || empty($_POST['newPassword'])) {
+echo "Please fill up all the required field.";
+}
+else
+{
+$fullName = $_POST['fullName'];
+$email = $_POST['email'];
+$password = $_POST['newPassword'];
+$hash = password_hash($password, PASSWORD_DEFAULT);
+// Make a connection with MySQL server.
+include('config.php');
+$sQuery = "SELECT id from account where email=? LIMIT 1";
+$iQuery = "INSERT Into account (fullName, email, password) values(?, ?, ?)";
+// To protect MySQL injection for Security purpose
+$stmt = $conn->prepare($sQuery);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$stmt->bind_result($id);
+$stmt->store_result();
+$rnum = $stmt->num_rows;
+if($rnum==0) { //if true, insert new data
+          $stmt->close();
+          
+          $stmt = $conn->prepare($iQuery);
+    	  $stmt->bind_param("sss", $fullName, $email, $hash);
+          if($stmt->execute()) {
+        echo 'Register successfully, Please login with your login details';}
+        } else { 
+       echo 'Someone already register with this email address.';
+     }
+$stmt->close();
+$conn->close(); // Closing database Connection
+}
+}
+?> 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Register</title>
+	<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+ <div class="rlform">
+  <div class="rlform rlform-wrapper">
+   <div class="rlform-box">
+	<div class="rlform-box-inner">
+	 <form method="post" oninput='validatePassword()'>
+	  <p>Let's create your account</p>
 
-// Now we check if the data was submitted, isset() function will check if the data exists.
-if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
-	// Could not get the data that should have been sent.
-	die ('Please complete the registration form!');
-}
-// Make sure the submitted registration values are not empty.
-if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
-	// One or more values are empty.
-	die ('Please complete the registration form');
-}
+     <div class="rlform-group">
+	  <label>Full Name</label>
+	  <input type="text" name="fullName" class="rlform-input" required>
+	 </div>
+		
+	 <div class="rlform-group">					
+	  <label>Email</label>
+	  <input type="email" name="email" class="rlform-input" required>
+	 </div>
+		
+	 <div class="rlform-group">					
+	  <label>Password</label>
+	  <input type="password" name="newPassword" id="newPass" class="rlform-input" required>
+     </div>
 
-// We need to check if the account with that username exists.
-if ($stmt = $con->prepare('SELECT id, password FROM customers WHERE username = ?')) {
-	// Bind parameters (s = string, i = int, b = blob, etc), hash the password using the PHP password_hash function.
-	$stmt->bind_param('s', $_POST['username']);
-	$stmt->execute();
-	$stmt->store_result();
-	// Store the result so we can check if the account exists in the database.
-	if ($stmt->num_rows > 0) {
-		// Username already exists
-		echo 'Username exists, please choose another!';
-	} else {
-		// Username doesnt exists, insert new account
-if ($stmt = $con->prepare('INSERT INTO customers (username, password, email) VALUES (?, ?, ?)')) {
-	// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
-	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-	$stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
-	$stmt->execute();
-	echo 'You have successfully registered, you can now login!';
-} else {
-	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
-	echo 'Could not prepare statement!';
+     <div class="rlform-group">
+	  <label>Conform password</label>
+	  <input type="password" name="conformpassword" id="conformPass" class="rlform-input" required>
+     </div>
+
+	  <button class="rlform-btn" name="signUp">Sign Up
+	  </button>
+
+	  <div class="text-foot">
+	   Already have an account? <a href="login.php">Login</a>
+	  </div>
+	 </form>
+	</div>
+   </div>
+  </div>
+ </div>
+
+	<script>
+		function validatePassword(){
+  if(newPass.value != conformPass.value) {
+    conformPass.setCustomValidity('Passwords do not match.');
+  } else {
+    conformPass.setCustomValidity('');
+  }
 }
-	}
-	$stmt->close();
-} else {
-	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
-	echo 'Could not prepare statement!';
-}
-$con->close();
-?>
+	</script>
+</body>
+</html>
