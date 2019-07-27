@@ -56,7 +56,7 @@ $conn->close(); // Closing database Connection
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Login</title>
-  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
  <div class="rlform">
