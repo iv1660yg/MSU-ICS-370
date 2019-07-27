@@ -30,8 +30,6 @@ include_once("db_connect.php");
 			</ul>
 		</div>
 		
-		div class="container">
-<h2 align=center>ICS Group Project - Car Rental System</h2>	
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4 well">
 			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
@@ -39,7 +37,7 @@ include_once("db_connect.php");
 					<legend>Update Profile</legend>
 
 					<div class="form-group">
-						<label for="name">Name</label>
+						<label for="name">Name</label> <?php echo $_SESSION['user_name']; ?>
 						<input type="text" name="name" placeholder="Enter Full Name" required value="<?php if($error) echo $name; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($uname_error)) echo $uname_error; ?></span>
 					</div>
@@ -57,7 +55,7 @@ include_once("db_connect.php");
 					</div>					
 					
 					<div class="form-group">
-						<label for="name">Email</label>
+						<label for="name">Email</label> <?php echo $_SESSION['email']; ?>
 						<input type="text" name="email" placeholder="Email" required value="<?php if($error) echo $email; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($email_error)) echo $email_error; ?></span>
 					</div>
