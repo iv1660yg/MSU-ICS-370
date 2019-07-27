@@ -8,8 +8,8 @@ body {
 	/* variables */
 	--color-primary: #042cdf;
 	--color-grey: rgba(0, 102, 255, 0.06);
-	--color-dark: rgba(255, 152, 0, .5);
-	--color-semidark: rgba(255, 152, 0, 0.5);
+	--color-dark: rgba(0, 102, 255, 0.06);
+	--color-semidark: rgba(25, 104, 223, 0.842);
 
 	text-align: center;
 	margin: 10px 0 0 0;
