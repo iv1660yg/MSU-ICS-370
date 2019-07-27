@@ -1,5 +1,5 @@
 <div class="container">
-	<h2>Example: Login and Registration Script with PHP, MySQL</h2>		
+	<h2>ICS 370 Group Project</h2>		
 	<div class="collapse navbar-collapse" >
 		<ul class="nav navbar-nav navbar-left">
 			<?php if (isset($_SESSION['user_id'])) { ?>
