@@ -3,7 +3,7 @@
 $DATABASE_HOST = '127.0.0.1';
 $DATABASE_USER = 'azure';
 $DATABASE_PASS = '6#vWHD_$';
-$DATABASE_NAME = 'mycrsdb';
+$DATABASE_NAME = 'localdb';
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if (mysqli_connect_errno()) {
