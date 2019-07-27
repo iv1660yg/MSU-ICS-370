@@ -51,6 +51,18 @@ if (isset($_POST['signup'])) {
 						<input type="text" name="name" placeholder="Enter Full Name" required value="<?php if($error) echo $name; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($uname_error)) echo $uname_error; ?></span>
 					</div>
+
+					<div class="form-group">
+						<label for="name">Address</label>
+						<input type="text" name="address" placeholder="Enter Full Address" required value="<?php if($error) echo $name; ?>" class="form-control" />
+						<span class="text-danger"><?php if (isset($uaddress_error)) echo $uaddress_error; ?></span>
+					</div>
+
+					<div class="form-group">
+						<label for="name">Phone Number</label>
+						<input type="text" name="address" placeholder="Enter Phone #" required value="<?php if($error) echo $name; ?>" class="form-control" />
+						<span class="text-danger"><?php if (isset($uphone_error)) echo $uphone_error; ?></span>
+					</div>					
 					
 					<div class="form-group">
 						<label for="name">Email</label>
@@ -84,8 +96,5 @@ if (isset($_POST['signup'])) {
 		Already Registered? <a href="login.php">Login Here</a>
 		</div>
 	</div>	
-	<div style="margin:50px 0px 0px 0px;">
-		<a class="btn btn-default read-more" style="background:#3399ff;color:white" href="http://webdamn.com/login-and-registration-script-with-php-mysql" title="">Back to Tutorial</a>			
-	</div>
 </div>
 <?php include('footer.php');?> 
