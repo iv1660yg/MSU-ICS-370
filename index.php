@@ -1,16 +1,14 @@
-<?php
-include('session.php');
-$_SESSION['pageStore'] = "index.php";
-
-if(!isset($_SESSION['login_id'])){
-header("location: login.php"); // Redirecting To login
-}
-echo '<div style="font-size: 35px;">
-<strong>Profile</strong>
-<br>'
-. $session_fullName
-. '<br>
-<a href="setting.php">Setting</a>
-<a href="logout.php">Logout</a>
-</div>';
-?>
+<div class="container">
+	<h2>Example: Login and Registration Script with PHP, MySQL</h2>		
+	<div class="collapse navbar-collapse" >
+		<ul class="nav navbar-nav navbar-left">
+			<?php if (isset($_SESSION['user_id'])) { ?>
+			<li><p class="navbar-text"><strong>Welcome!</strong> You're signed in as <strong><?php echo $_SESSION['user_name']; ?></strong></p></li>
+			<li><a href="logout.php">Log Out</a></li>
+			<?php } else { ?>
+			<li><a href="login.php">Login</a></li>
+			<li><a href="register.php">Sign Up</a></li>
+			<?php } ?>
+		</ul>
+	</div>	
+</div>	

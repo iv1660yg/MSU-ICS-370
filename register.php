@@ -1,113 +1,80 @@
-<?php
-session_start();// Starting Session
-
-//if session exit, user nither need to signin nor need to signup
-if(isset($_SESSION['login_id'])){
-  if (isset($_SESSION['pageStore'])) {
-      $pageStore = $_SESSION['pageStore'];
-header("location: $pageStore"); // Redirecting To Profile Page
-    }
-}
-
-//Register progess start, if user press the signup button
-if (isset($_POST['signUp'])) {
-if (empty($_POST['fullName']) || empty($_POST['email']) || empty($_POST['newPassword'])) {
-echo "Please fill up all the required field.";
-}
-else
-{
-
-$fullName = $_POST['fullName'];
-$email = $_POST['email'];
-$password = $_POST['newPassword'];
-$hash = password_hash($password, PASSWORD_DEFAULT);
-
-// Make a connection with MySQL server.
-include('config.php');
-
-$sQuery = "SELECT id from customers where email=? LIMIT 1";
-$iQuery = "INSERT Into customers (fullName, email, password) values(?, ?, ?)";
-
-// To protect MySQL injection for Security purpose
-$stmt = $conn->prepare($sQuery);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$stmt->bind_result($id);
-$stmt->store_result();
-$rnum = $stmt->num_rows;
-
-if($rnum==0) { //if true, insert new data
-          $stmt->close();
-          
-          $stmt = $conn->prepare($iQuery);
-    	  $stmt->bind_param("sss", $fullName, $email, $hash);
-          if($stmt->execute()) {
-        echo 'Register successfully, Please login with your login details';}
-        } else { 
-       echo 'Someone already register with this email address.';
-     }
-$stmt->close();
-$conn->close(); // Closing database Connection
-}
-}
-
-?> 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Register</title>
-	<link rel="stylesheet" href="auth.css">
-</head>
-<body>
- <div class="rlform">
-  <div class="rlform rlform-wrapper">
-   <div class="rlform-box">
-	<div class="rlform-box-inner">
-	 <form method="post" oninput='validatePassword()'>
-	  <p>Let's create your account</p>
-
-     <div class="rlform-group">
-	  <label>Full Name</label>
-	  <input type="text" name="fullName" class="rlform-input" required>
-	 </div>
-		
-	 <div class="rlform-group">					
-	  <label>Email</label>
-	  <input type="email" name="email" class="rlform-input" required>
-	 </div>
-		
-	 <div class="rlform-group">					
-	  <label>Password</label>
-	  <input type="password" name="newPassword" id="newPass" class="rlform-input" required>
-     </div>
-
-     <div class="rlform-group">
-	  <label>Conform password</label>
-	  <input type="password" name="conformpassword" id="conformPass" class="rlform-input" required>
-     </div>
-
-	  <button class="rlform-btn" name="signUp">Sign Up
-	  </button>
-
-	  <div class="text-foot">
-	   Already have an account? <a href="login.php">Login</a>
-	  </div>
-	 </form>
+<div class="container">
+<h2>Example: Login and Registration Script with PHP, MySQL</h2>	
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4 well">
+			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
+				<fieldset>
+					<legend>Sign Up</legend>
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" name="name" placeholder="Enter Full Name" required value="<?php if($error) echo $name; ?>" class="form-control" />
+						<span class="text-danger"><?php if (isset($uname_error)) echo $uname_error; ?></span>
+					</div>					
+					<div class="form-group">
+						<label for="name">Email</label>
+						<input type="text" name="email" placeholder="Email" required value="<?php if($error) echo $email; ?>" class="form-control" />
+						<span class="text-danger"><?php if (isset($email_error)) echo $email_error; ?></span>
+					</div>
+					<div class="form-group">
+						<label for="name">Password</label>
+						<input type="password" name="password" placeholder="Password" required class="form-control" />
+						<span class="text-danger"><?php if (isset($password_error)) echo $password_error; ?></span>
+					</div>
+					<div class="form-group">
+						<label for="name">Confirm Password</label>
+						<input type="password" name="cpassword" placeholder="Confirm Password" required class="form-control" />
+						<span class="text-danger"><?php if (isset($cpassword_error)) echo $cpassword_error; ?></span>
+					</div>
+					<div class="form-group">
+						<input type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
+					</div>
+				</fieldset>
+			</form>
+			<span class="text-success"><?php if (isset($success_message)) { echo $success_message; } ?></span>
+			<span class="text-danger"><?php if (isset($error_message)) { echo $error_message; } ?></span>
+		</div>
 	</div>
-   </div>
-  </div>
- </div>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4 text-center">	
+		Already Registered? <a href="login.php">Login Here</a>
+		</div>
+	</div>	
+</div>
 
-	<script>
-		function validatePassword(){
-  if(newPass.value != conformPass.value) {
-    conformPass.setCustomValidity('Passwords do not match.');
-  } else {
-    conformPass.setCustomValidity('');
-  }
+<?php
+include_once("db_connect.php");
+session_start();
+if(isset($_SESSION['user_id'])) {
+	header("Location: index.php");
 }
-	</script>
-</body>
-</html>
+$error = false;
+if (isset($_POST['signup'])) {
+	$name = mysqli_real_escape_string($conn, $_POST['name']);
+	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$password = mysqli_real_escape_string($conn, $_POST['password']);
+	$cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);	
+	if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
+		$error = true;
+		$uname_error = "Name must contain only alphabets and space";
+	}
+	if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+		$error = true;
+		$email_error = "Please Enter Valid Email ID";
+	}
+	if(strlen($password) < 6) {
+		$error = true;
+		$password_error = "Password must be minimum of 6 characters";
+	}
+	if($password != $cpassword) {
+		$error = true;
+		$cpassword_error = "Password and Confirm Password doesn't match";
+	}
+	if (!$error) {
+		if(mysqli_query($conn, "INSERT INTO users(user, email, pass) VALUES('" . $name . "', '" . $email . "', '" . md5($password) . "')")) {
+			$success_message = "Successfully Registered! <a href='login.php'>Click here to Login</a>";
+		} else {
+			$error_message = "Error in registering...Please try again later!";
+		}
+	}
+}
+?>

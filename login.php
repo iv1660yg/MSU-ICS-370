@@ -1,101 +1,49 @@
+<div class="container">
+	<h2>Example: Login and Registration Script with PHP, MySQL</h2>		
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4 well">
+			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
+				<fieldset>
+					<legend>Login</legend>						
+					<div class="form-group">
+						<label for="name">Email</label>
+						<input type="text" name="email" placeholder="Your Email" required class="form-control" />
+					</div>	
+					<div class="form-group">
+						<label for="name">Password</label>
+						<input type="password" name="password" placeholder="Your Password" required class="form-control" />
+					</div>	
+					<div class="form-group">
+						<input type="submit" name="login" value="Login" class="btn btn-primary" />
+					</div>
+				</fieldset>
+			</form>
+			<span class="text-danger"><?php if (isset($error_message)) { echo $error_message; } ?></span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4 text-center">	
+		New User? <a href="register.php">Sign Up Here</a>
+		</div>
+	</div>	
+</div>
+
 <?php
-session_start(); // Starting Session
-
-//if session exit, user nither need to signin nor need to signup
-if(isset($_SESSION['login_id'])){
-  if (isset($_SESSION['pageStore'])) {
-      $pageStore = $_SESSION['pageStore'];
-header("location: $pageStore"); // Redirecting To Profile Page
-    }
+session_start();
+include_once("db_connect.php");
+if(isset($_SESSION['user_id'])!="") {
+	header("Location: index.php");
 }
-
-//Login progess start, if user press the signin button
-if (isset($_POST['signIn'])) {
-if (empty($_POST['email']) || empty($_POST['password'])) {
-echo "Username & Password should not be empty";
-}
-else
-{
-
-$email = $_POST['email'];
-$password = $_POST['password'];
-
-// Make a connection with MySQL server.
-include('config.php');
-
-$sQuery = "SELECT id, password from customers where email=? LIMIT 1";
-
-// To protect MySQL injection for Security purpose
-$stmt = $conn->prepare($sQuery);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$stmt->bind_result($id, $hash);
-$stmt->store_result();
-
-if($stmt->fetch()) { 
-  if (password_verify($password, $hash)) {
-          $_SESSION['login_id'] = $id;
-
-          if (isset($_SESSION['pageStore'])) {
-            $pageStore = $_SESSION['pageStore'];
-          }
-          else {
-            $pageStore = "index.php";
-          }
-          header("location: $pageStore"); // Redirecting To Profile
-          $stmt->close();
-          $conn->close();
-
-        }
-else {
-       echo 'Invalid Username & Password';
-     }
-      } else {
-       echo 'Invalid Username & Password';
-     }
-$stmt->close();
-$conn->close(); // Closing database Connection
-}
+if (isset($_POST['login'])) {
+	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$password = mysqli_real_escape_string($conn, $_POST['password']);
+	$result = mysqli_query($conn, "SELECT * FROM users WHERE email = '" . $email. "' and pass = '" . md5($password). "'");
+	if ($row = mysqli_fetch_array($result)) {
+		$_SESSION['user_id'] = $row['uid'];
+		$_SESSION['user_name'] = $row['user'];
+		header("Location: index.php");
+	} else {
+		$error_message = "Incorrect Email or Password!!!";
+	}
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Login</title>
-  <link rel="stylesheet" href="auth.css">
-</head>
-<body>
- <div class="rlform">
-  <div class="rlform rlform-wrapper">
-   <div class="rlform-box">
-    <div class="rlform-box-inner">
-   <form method="post">
-   <p>Welcome ICS 370 Group Project - Car Rental System</p> 
-    <p>Sign in to continue</p>
-
-    <div class="rlform-group">
-     <label>Email</label>
-     <input type="email" name="email" class="rlform-input" required>
-    </div>
-
-    <div class="rlform-group password-group">
-     <label>Password</label>
-     <input type="password" name="password" class="rlform-input" required>
-    </div>
-
-    <button type="submit" class="rlform-btn" name="signIn">Sign In
-    </button>
-
-    <div class="text-foot">
-    Don't have an account? <a href="register.php">Register</a>
-    </div>
-   </form>
-  </div>
-   </div>
-     </div>
- </div>
- </body>
-</html>
