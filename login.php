@@ -1,5 +1,3 @@
-
-
 <div class="container">
 	<h2>Example: Login and Registration Script with PHP, MySQL</h2>		
 	<div class="row">
