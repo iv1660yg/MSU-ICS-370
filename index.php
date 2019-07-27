@@ -6,7 +6,7 @@ include_once("db_connect.php");
 
 
 <div class="container">
-	<h2>ICS Group Project - Car Rental System</h2>	
+	<h2 align=center>ICS Group Project - Car Rental System</h2>	
 		
 		<br>
 		<br>
