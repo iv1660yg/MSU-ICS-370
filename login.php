@@ -73,6 +73,7 @@ $conn->close(); // Closing database Connection
    <div class="rlform-box">
     <div class="rlform-box-inner">
    <form method="post">
+   <p>Welcome ICS 370 - Car Rental System</p> 
     <p>Sign in to continue</p>
 
     <div class="rlform-group">
