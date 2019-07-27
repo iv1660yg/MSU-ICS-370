@@ -3,9 +3,7 @@ session_start();
 include('header.php');
 include_once("db_connect.php");
 ?>
-<title>webdamn.com : Demo Login and Registration Script with PHP, MySQL</title>
-<script type="text/javascript" src="script/ajax.js"></script>
-<?php include('container.php');?>
+
 
 <div class="container">
 	<h2>Example: Login and Registration Script with PHP, MySQL</h2>	
