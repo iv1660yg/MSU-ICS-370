@@ -21,7 +21,7 @@ if (isset($_POST['login'])) {
 ?>
 
 <div class="container">
-	<h2>ICS Group Project - Car Rental System<</h2>		
+	<h2>ICS Group Project - Car Rental System</h2>		
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4 well">
 			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
