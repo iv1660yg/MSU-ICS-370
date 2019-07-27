@@ -18,8 +18,6 @@ if (isset($_POST['login'])) {
 }
 ?>
 
-
-
 <div class="container">
 	<h2>ICS 370 Group Project</h2>		
 	<div class="row">
