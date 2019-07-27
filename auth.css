@@ -6,10 +6,10 @@ body {
 
 .rlform {
 	/* variables */
-	--color-primary: #ff9800;
-	--color-grey: rgba(255, 152, 0, 0.06);
-	--color-dark: rgba(255, 152, 0, .5);
-	--color-semidark: rgba(255, 152, 0, 0.5);
+	--color-primary: #1900ff;
+	--color-grey: rgba(0, 47, 255, 0.06);
+	--color-dark: rgba(0, 47, 255, 0.06);
+	--color-semidark: rgba(0, 47, 255, 0.06);
 
 	text-align: center;
 	margin: 10px 0 0 0;
