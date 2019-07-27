@@ -1,5 +1,6 @@
 <?php
 session_start();// Starting Session
+
 //if session exit, user nither need to signin nor need to signup
 if(isset($_SESSION['login_id'])){
   if (isset($_SESSION['pageStore'])) {
@@ -7,6 +8,7 @@ if(isset($_SESSION['login_id'])){
 header("location: $pageStore"); // Redirecting To Profile Page
     }
 }
+
 //Register progess start, if user press the signup button
 if (isset($_POST['signUp'])) {
 if (empty($_POST['fullName']) || empty($_POST['email']) || empty($_POST['newPassword'])) {
@@ -14,14 +16,18 @@ echo "Please fill up all the required field.";
 }
 else
 {
+
 $fullName = $_POST['fullName'];
 $email = $_POST['email'];
 $password = $_POST['newPassword'];
 $hash = password_hash($password, PASSWORD_DEFAULT);
+
 // Make a connection with MySQL server.
 include('config.php');
+
 $sQuery = "SELECT id from account where email=? LIMIT 1";
 $iQuery = "INSERT Into account (fullName, email, password) values(?, ?, ?)";
+
 // To protect MySQL injection for Security purpose
 $stmt = $conn->prepare($sQuery);
 $stmt->bind_param("s", $email);
@@ -29,6 +35,7 @@ $stmt->execute();
 $stmt->bind_result($id);
 $stmt->store_result();
 $rnum = $stmt->num_rows;
+
 if($rnum==0) { //if true, insert new data
           $stmt->close();
           
@@ -43,6 +50,7 @@ $stmt->close();
 $conn->close(); // Closing database Connection
 }
 }
+
 ?> 
 <!DOCTYPE html>
 <html>
@@ -50,7 +58,7 @@ $conn->close(); // Closing database Connection
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Register</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="auth.css">
 </head>
 <body>
  <div class="rlform">
