@@ -1,4 +1,5 @@
 <div class="container">
+<link rel="stylesheet" href="style.css">
 	<h2>ICS 370 Group Project</h2>		
 	<div class="collapse navbar-collapse" >
 		<ul class="nav navbar-nav navbar-left">
