@@ -52,9 +52,6 @@ if (isset($_POST['login'])) {
 		</div>
 	</div>
 		
-		
-	<div style="margin:50px 0px 0px 0px;">
-		<a class="btn btn-default read-more" style="background:#3399ff;color:white" href="http://webdamn.com/login-and-registration-script-with-php-mysql" title="">Back to Tutorial</a>			
-	</div>
+	
 </div>
 <?php include('footer.php');?> 
