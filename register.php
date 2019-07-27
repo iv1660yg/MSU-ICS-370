@@ -1,4 +1,6 @@
-<?php
+<?php 
+ob_start();
+include('header.php');
 include_once("db_connect.php");
 session_start();
 if(isset($_SESSION['user_id'])) {
@@ -35,35 +37,42 @@ if (isset($_POST['signup'])) {
 	}
 }
 ?>
+<title>webdamn.com : Demo Login and Registration Script with PHP, MySQL</title>
+<script type="text/javascript" src="script/ajax.js"></script>
+<?php include('container.php');?>
 
 <div class="container">
-<h2>ICS 370 Group Project</h2>
-<link rel="stylesheet" href="style.css">	
+<h2>Example: Login and Registration Script with PHP, MySQL</h2>	
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4 well">
 			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
 				<fieldset>
 					<legend>Sign Up</legend>
+
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input type="text" name="name" placeholder="Enter Full Name" required value="<?php if($error) echo $name; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($uname_error)) echo $uname_error; ?></span>
-					</div>					
+					</div>
+					
 					<div class="form-group">
 						<label for="name">Email</label>
 						<input type="text" name="email" placeholder="Email" required value="<?php if($error) echo $email; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($email_error)) echo $email_error; ?></span>
 					</div>
+
 					<div class="form-group">
 						<label for="name">Password</label>
 						<input type="password" name="password" placeholder="Password" required class="form-control" />
 						<span class="text-danger"><?php if (isset($password_error)) echo $password_error; ?></span>
 					</div>
+
 					<div class="form-group">
 						<label for="name">Confirm Password</label>
 						<input type="password" name="cpassword" placeholder="Confirm Password" required class="form-control" />
 						<span class="text-danger"><?php if (isset($cpassword_error)) echo $cpassword_error; ?></span>
 					</div>
+
 					<div class="form-group">
 						<input type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
 					</div>
@@ -78,7 +87,8 @@ if (isset($_POST['signup'])) {
 		Already Registered? <a href="login.php">Login Here</a>
 		</div>
 	</div>	
+	<div style="margin:50px 0px 0px 0px;">
+		<a class="btn btn-default read-more" style="background:#3399ff;color:white" href="http://webdamn.com/login-and-registration-script-with-php-mysql" title="">Back to Tutorial</a>			
+	</div>
 </div>
-
-
-
+<?php include('footer.php');?> 
