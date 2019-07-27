@@ -37,12 +37,9 @@ if (isset($_POST['signup'])) {
 	}
 }
 ?>
-<title>webdamn.com : Demo Login and Registration Script with PHP, MySQL</title>
-<script type="text/javascript" src="script/ajax.js"></script>
-<?php include('container.php');?>
 
 <div class="container">
-<h2>Example: Login and Registration Script with PHP, MySQL</h2>	
+<h2>ICS Group Project - Car Rental System<</h2>	
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4 well">
 			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">

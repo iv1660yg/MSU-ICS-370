@@ -6,7 +6,7 @@ include_once("db_connect.php");
 
 
 <div class="container">
-	<h2>Example: Login and Registration Script with PHP, MySQL</h2>	
+	<h2>ICS Group Project - Car Rental System</h2>	
 		
 		<br>
 		<br>
