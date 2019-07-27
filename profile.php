@@ -37,7 +37,7 @@ include_once("db_connect.php");
 					<legend>Update Profile</legend>
 
 					<div class="form-group">
-						<label for="name">Name</label> <?php echo $_SESSION['user_name']; ?>
+						<label for="name">Name</label> <?php echo "Your name is currently ", $_SESSION['user_name']; ?>
 						<input type="text" name="name" placeholder="Enter Full Name" required value="<?php if($error) echo $name; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($uname_error)) echo $uname_error; ?></span>
 					</div>
