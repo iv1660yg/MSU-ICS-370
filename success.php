@@ -3,7 +3,8 @@
 <div class="container">
 	<h2 align=center>ICS Group Project - Car Rental System</h2>		
 	<div class="row">
-	<img align="center" src="img/checked.png" alt="">
+	<img align="center" src="img/checked.png" alt="" >
+	<p>
 	<center>Successfully Registered! <a href='login.php'>Click here to Login</a>" </center>
 
 	</div>
