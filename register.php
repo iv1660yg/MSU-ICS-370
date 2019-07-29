@@ -4,7 +4,7 @@ include('header.php');
 include_once("db_connect.php");
 session_start();
 if(isset($_SESSION['user_id'])) {
-	header("Location: index.php");
+	header("Location:index.php");
 }
 $error = false;
 if (isset($_POST['signup'])) {
