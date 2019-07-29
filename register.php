@@ -31,7 +31,7 @@ if (isset($_POST['signup'])) {
 	if (!$error) {
 		if(mysqli_query($conn, "INSERT INTO users(user, email, pass) VALUES('" . $name . "', '" . $email . "', '" . md5($password) . "')")) {
 
-			header("Location:login.php");
+			header("Location:success.php");
 			exit();
 
 		} else {
