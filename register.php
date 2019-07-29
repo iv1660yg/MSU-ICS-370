@@ -30,7 +30,10 @@ if (isset($_POST['signup'])) {
 	}
 	if (!$error) {
 		if(mysqli_query($conn, "INSERT INTO users(user, email, pass) VALUES('" . $name . "', '" . $email . "', '" . md5($password) . "')")) {
-			$success_message = "Successfully Registered! <a href='login.php'>Click here to Login</a>";
+			// $success_message = "Successfully Registered! <a href='login.php'>Click here to Login</a>";
+			header("Location: result2.php");
+			exit();
+
 		} else {
 			$error_message = "Error in registering...Please try again later!";
 		}
