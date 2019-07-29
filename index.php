@@ -26,6 +26,9 @@ include_once("db_connect.php");
 				<?php } else { ?>
 				<li><a href="login.php">Login</a></li>
 				<li><a href="register.php">Sign Up</a></li>
+				<div>
+				<img align="center" src="img/imghome.jpg" alt="">
+				</div>
 				<?php } ?>
 			</ul>
 		</div>
