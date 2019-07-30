@@ -5,7 +5,7 @@
 	<div class="row">
 	<p>
 	<p>
-	<center>Successfully Registered! <a href='login.php'>Click here to Login</a>" </center>
+	<center>Successfully Registered! <a href='login.php'>Click here to Login</a> \\\\\\\\\\\\ </center>
 
 	</div>
 	<div class="row">
