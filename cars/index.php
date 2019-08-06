@@ -17,15 +17,32 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Action</th>
+                                <th>Price Per Day</th>
+                                <th>Make</th>
+                                <th>Model</th>
+                                <th>Year</th>
+                                <th>Color</th>
+                                <th>Miles</th>
+                                <th>Status</th>
+                                <th>Create Date</th>
+                                <th>End Date</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="text" ng-model="addData.first_name" class="form-control" placeholder="Enter First Name" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.last_name" class="form-control" placeholder="Enter Last Name" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.priceperday" class="form-control" placeholder="Enter Price Per Day" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.make" class="form-control" placeholder="Enter Make" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.model" class="form-control" placeholder="Enter Model" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.year" class="form-control" placeholder="Enter Year" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.color" class="form-control" placeholder="Enter Color" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.miles" class="form-control" placeholder="Enter Miles" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.status" class="form-control" placeholder="Enter Status" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.createDate" class="form-control" placeholder="Enter Create Date" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.endDate" class="form-control" placeholder="Enter End Date" ng-required="true" /></td>
+
+
+
+
                                 <td><button type="submit" class="btn btn-success btn-sm" ng-disabled="testform.$invalid">Add</button></td>
                             </tr>
                             <tr ng-repeat="data in namesData" ng-include="getTemplate(data)">
@@ -35,16 +52,30 @@
                     </table>
                 </form>
                 <script type="text/ng-template" id="display">
-                    <td>{{data.first_name}}</td>
-                    <td>{{data.last_name}}</td>
+                    <td>{{data.priceperday}}</td>
+                    <td>{{data.make}}</td>
+                    <td>{{data.model}}</td>
+                    <td>{{data.year}}</td>
+                    <td>{{data.color}}</td>
+                    <td>{{data.miles}}</td>
+                    <td>{{data.status}}</td>
+                    <td>{{data.createDate}}</td>
+                    <td>{{data.endDate}}</td>
                     <td>
                         <button type="button" class="btn btn-primary btn-sm" ng-click="showEdit(data)">Edit</button>
                         <button type="button" class="btn btn-danger btn-sm" ng-click="deleteData(data.id)">Delete</button>
                     </td>
                 </script>
                 <script type="text/ng-template" id="edit">
-                    <td><input type="text" ng-model="formData.first_name" class="form-control"  /></td>
-                    <td><input type="text" ng-model="formData.last_name" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.priceperday" class="form-control"  /></td>
+                    <td><input type="text" ng-model="formData.make" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.model" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.year" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.color" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.miles" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.status" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.createDate" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.endDate" class="form-control" /></td>
                     <td>
                         <input type="hidden" ng-model="formData.data.id" />
                         <button type="button" class="btn btn-info btn-sm" ng-click="editData()">Save</button>
