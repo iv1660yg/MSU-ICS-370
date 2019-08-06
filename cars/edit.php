@@ -9,14 +9,21 @@ $message = '';
 $form_data = json_decode(file_get_contents("php://input"));
 
 $data = array(
- ':first_name'  => $form_data->first_name,
- ':last_name'  => $form_data->last_name,
+ ':priceperday'  => $form_data->priceperday,
+ ':make'  => $form_data->make,
+ ':model'  => $form_data->model,
+ ':year'  => $form_data->year,
+ ':color'  => $form_data->color,
+ ':miles'  => $form_data->miles,
+ ':status'  => $form_data->status,
+ ':createDate'  => $form_data->createDate,
+ ':endDate'  => $form_data->endDate,
  ':id'    => $form_data->id
 );
 
 $query = "
- UPDATE tbl_sample 
- SET first_name = :first_name, last_name = :last_name 
+ UPDATE cars 
+ SET priceperday = :priceperday, make = :make, model = :model, color = :color, miles = :miles, status = :status, createDate = :createDate, endDate = :endDate       
  WHERE id = :id
 ";
 

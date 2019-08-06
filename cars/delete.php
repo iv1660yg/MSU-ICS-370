@@ -8,7 +8,7 @@ $message = '';
 
 $form_data = json_decode(file_get_contents("php://input"));
 
-$query = "DELETE FROM tbl_sample WHERE id = '".$form_data->id."'";
+$query = "DELETE FROM cars WHERE id = '".$form_data->id."'";
 
 $statement = $connect->prepare($query);
 if($statement->execute())

@@ -4,7 +4,7 @@
  
 include('database_connection.php');
 
-$query = "SELECT * FROM tbl_sample ORDER BY id DESC";
+$query = "SELECT * FROM cars ORDER BY id DESC";
 $statement = $connect->prepare($query);
 if($statement->execute())
 {

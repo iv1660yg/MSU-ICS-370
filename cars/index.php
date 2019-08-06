@@ -7,7 +7,7 @@
     <body>  
         <div class="container">  
    <br />
-            <h3 align="center">Inline Table Add Edit Delete using AngularJS in PHP Mysql</h3><br />
+            <h3 align="center">Manage Cars</h3><br />
    <div class="table-responsive" ng-app="liveApp" ng-controller="liveController" ng-init="fetchData()">
                 <div class="alert alert-success alert-dismissible" ng-show="success" >
                     <a href="#" class="close" data-dismiss="alert" ng-click="closeMsg()" aria-label="close">&times;</a>
