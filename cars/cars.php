@@ -20,7 +20,7 @@ include_once("../db_connect.php");
 				<p>
 
 				<?php 
-				include('index.php');
+				require('index.php');
 				?> 
 
 				<li><a href="../logout.php">Log Out</a></li>
