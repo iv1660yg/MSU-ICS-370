@@ -18,9 +18,12 @@ include_once("db_connect.php");
 				<li><a href="reservation.php">Manage Existing Reservations</a></li>
 				<li><a href="cars.php">Manage Cars</a></li>
 
-				<?php include('cars/index.php'); 
-				?>
-				
+				<?php 
+				foreach (glob("cars/*.php") as $filename) { 
+    			include $filename; 
+				} 
+				?> 
+
 				<li><a href="logout.php">Log Out</a></li>
 				<?php } elseif (isset($_SESSION['user_id'])) { ?>
 				<li><p class="navbar-text"><strong>Welcome!</strong> You're signed in as <strong><?php echo $_SESSION['user_name']; ?></strong></p></li>

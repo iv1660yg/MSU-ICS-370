@@ -1,13 +1,13 @@
 <html>  
     <head>  
-        <title>Inline Table Add Edit Delete using AngularJS in PHP Mysql</title>  
+        <title>Manage Cars</title>  
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>  
     </head>  
     <body>  
         <div class="container">  
    <br />
-            <h3 align="center">Manage Cars</h3><br />
+            <h3 align="left">Manage Cars</h3><br />
    <div class="table-responsive" ng-app="liveApp" ng-controller="liveController" ng-init="fetchData()">
                 <div class="alert alert-success alert-dismissible" ng-show="success" >
                     <a href="#" class="close" data-dismiss="alert" ng-click="closeMsg()" aria-label="close">&times;</a>
