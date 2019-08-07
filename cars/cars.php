@@ -19,9 +19,7 @@ include_once("db_connect.php");
 				<li><a href="cars.php">Manage Cars</a></li>
 
 				<?php 
-				foreach (glob("cars/*.php") as $filename) { 
-    			include $filename; 
-				} 
+				include('cars/index.php');
 				?> 
 
 				<li><a href="logout.php">Log Out</a></li>
