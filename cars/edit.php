@@ -23,7 +23,7 @@ $data = array(
 
 $query = "
  UPDATE cars 
- SET priceperday = :priceperday, make = :make, model = :model, color = :color, miles = :miles, status = :status, createDate = :createDate, endDate = :endDate       
+ SET priceperday = :priceperday, make = :make, model = :model, year = :year, color = :color, miles = :miles, status = :status, createDate = :createDate, endDate = :endDate       
  WHERE id = :id
 ";
 
