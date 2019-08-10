@@ -143,7 +143,7 @@ app.controller('liveController', function($scope, $http){
             $http({
                 method:"POST",
                 url:"delete.php",
-                data:{'id':id}
+                data:{'uid':uid}
             }).success(function(data){
                 $scope.success = true;
                 $scope.successMessage = data.message;

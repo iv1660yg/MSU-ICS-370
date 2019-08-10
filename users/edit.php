@@ -15,13 +15,13 @@ $data = array(
  ':phone'  => $form_data->phone,
  ':email'  => $form_data->email,
  ':account_type'  => $form_data->account_type,
- ':id'    => $form_data->id
+ ':uid'    => $form_data->uid
 );
 
 $query = "
  UPDATE users 
  SET user = :user, pass = :pass, fullname = :fullname, phone = :phone, email = :email, account_type = :account_type   
- WHERE id = :id
+ WHERE uid = :uid
 ";
 
 $statement = $connect->prepare($query);
