@@ -18,7 +18,6 @@
                         <thead>
                             <tr>
                                 <th>User</th>
-                                <th>Password</th>
                                 <th>Full Name</th>
                                 <th>Phone</th>
                                 <th>Email</th>
@@ -28,7 +27,6 @@
                         <tbody>
                             <tr>
                                 <td><input type="text" ng-model="addData.user" class="form-control" placeholder="Enter UserName" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.pass" class="form-control" placeholder="Enter Password" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.fullname" class="form-control" placeholder="Enter Full Name" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.phone" class="form-control" placeholder="Enter Phone #" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.email" class="form-control" placeholder="Enter Email" ng-required="true" /></td>
@@ -46,7 +44,6 @@
                 </form>
                 <script type="text/ng-template" id="display">
                     <td>{{data.user}}</td>
-                    <td>{{data.pass}}</td>
                     <td>{{data.fullname}}</td>
                     <td>{{data.phone}}</td>
                     <td>{{data.email}}</td>
@@ -58,7 +55,6 @@
                 </script>
                 <script type="text/ng-template" id="edit">
                     <td><input type="text" ng-model="formData.user" class="form-control"  /></td>
-                    <td><input type="password" ng-model="formData.pass" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.fullname" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.phone" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.email" class="form-control" /></td>
