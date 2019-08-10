@@ -58,7 +58,7 @@
                 </script>
                 <script type="text/ng-template" id="edit">
                     <td><input type="text" ng-model="formData.user" class="form-control"  /></td>
-                    <td><input type="texh" ng-model="formData.pass" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.pass" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.fullname" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.phone" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.email" class="form-control" /></td>
