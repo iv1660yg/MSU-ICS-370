@@ -53,7 +53,7 @@
                     <td>{{data.account_type}}</td>
                     <td>
                         <button type="button" class="btn btn-primary btn-sm" ng-click="showEdit(data)">Edit</button>
-                        <button type="button" class="btn btn-danger btn-sm" ng-click="deleteData(data.id)">Delete</button>
+                        <button type="button" class="btn btn-danger btn-sm" ng-click="deleteData(data.uid)">Delete</button>
                     </td>
                 </script>
                 <script type="text/ng-template" id="edit">
