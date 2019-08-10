@@ -16,14 +16,15 @@ $data = array(
  ':color'  => $form_data->color,
  ':miles'  => $form_data->miles,
  ':status'  => $form_data->status,
+ ':type'  => $form_data->type,
  ':createDate'  => $form_data->createDate,
  ':endDate'  => $form_data->endDate
 );
 
 $query = "
  INSERT INTO cars 
- (priceperday, make, model, year, color, miles, status, createDate, endDate) VALUES 
- (:priceperday, :make, :model, :year, :color, :miles, :status, :createDate, :endDate)
+ (priceperday, make, model, year, color, miles, status, type, createDate, endDate) VALUES 
+ (:priceperday, :make, :model, :year, :color, :miles, :status, type, :createDate, :endDate)
 ";
 
 $statement = $connect->prepare($query);

@@ -24,6 +24,7 @@
                                 <th>Color</th>
                                 <th>Miles</th>
                                 <th>Status</th>
+                                <th>Car Type</th>                                
                                 <th>Create Date</th>
                                 <th>End Date</th>
                             </tr>
@@ -37,6 +38,7 @@
                                 <td><input type="text" ng-model="addData.color" class="form-control" placeholder="Enter Color" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.miles" class="form-control" placeholder="Enter Miles" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.status" class="form-control" placeholder="Enter Status" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.type" class="form-control" placeholder="Enter Car Type" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.createDate" class="form-control" placeholder="Enter Create Date" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.endDate" class="form-control" placeholder="Enter End Date" ng-required="true" /></td>
 
@@ -59,6 +61,7 @@
                     <td>{{data.color}}</td>
                     <td>{{data.miles}}</td>
                     <td>{{data.status}}</td>
+                    <td>{{data.type}}</td>
                     <td>{{data.createDate}}</td>
                     <td>{{data.endDate}}</td>
                     <td>
@@ -74,6 +77,7 @@
                     <td><input type="text" ng-model="formData.color" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.miles" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.status" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.type" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.createDate" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.endDate" class="form-control" /></td>
                     <td>

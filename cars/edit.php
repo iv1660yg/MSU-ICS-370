@@ -16,6 +16,7 @@ $data = array(
  ':color'  => $form_data->color,
  ':miles'  => $form_data->miles,
  ':status'  => $form_data->status,
+ ':type'  => $form_data->type,
  ':createDate'  => $form_data->createDate,
  ':endDate'  => $form_data->endDate,
  ':id'    => $form_data->id
@@ -23,7 +24,7 @@ $data = array(
 
 $query = "
  UPDATE cars 
- SET priceperday = :priceperday, make = :make, model = :model, year = :year, color = :color, miles = :miles, status = :status, createDate = :createDate, endDate = :endDate       
+ SET priceperday = :priceperday, make = :make, model = :model, year = :year, color = :color, miles = :miles, status = :status, type = :type, createDate = :createDate, endDate = :endDate       
  WHERE id = :id
 ";
 
