@@ -18,8 +18,8 @@
                         <thead>
                             <tr>
                                 <th>User</th>
-                                <th>Full Name</th>
                                 <th>Password</th>
+                                <th>Full Name</th>
                                 <th>Phone</th>
                                 <th>Email</th>
                                 <th>Account Type</th>
