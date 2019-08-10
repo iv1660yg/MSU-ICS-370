@@ -83,7 +83,7 @@ app.controller('liveController', function($scope, $http){
     $scope.success = false;
 
     $scope.getTemplate = function(data){
-        if (data.id === $scope.formData.id)
+        if (data.uid === $scope.formData.uid)
         {
             return 'edit';
         }
@@ -137,7 +137,7 @@ app.controller('liveController', function($scope, $http){
         $scope.success = false;
     };
 
-    $scope.deleteData = function(id){
+    $scope.deleteData = function(uid){
         if(confirm("Are you sure you want to remove it?"))
         {
             $http({
