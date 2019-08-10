@@ -8,7 +8,7 @@
         <div class="container">  
    <br />
             <h3 align="center"> </h3><br />
-   <div class="table-responsive" ng-app="liveApp" ng-controller="liveController" ng-init="fetchData()">
+   <div class="table-responsive" ng-app="liveApp2" ng-controller="liveController" ng-init="fetchData()">
                 <div class="alert alert-success alert-dismissible" ng-show="success" >
                     <a href="#" class="close" data-dismiss="alert" ng-click="closeMsg()" aria-label="close">&times;</a>
                     {{successMessage}}
@@ -74,7 +74,7 @@
     </body>  
 </html>  
 <script>
-var app = angular.module('liveApp', []);
+var app = angular.module('liveApp2', []);
 
 app.controller('liveController', function($scope, $http){
 
