@@ -8,7 +8,7 @@
         <div class="container">  
    <br />
             <h3 align="center"> </h3><br />
-   <div class="table-responsive" ng-app="liveApp2" ng-controller="liveController" ng-init="fetchData()">
+   <div class="table-responsive" ng-app="liveApp" ng-controller="liveController" ng-init="fetchData()">
                 <div class="alert alert-success alert-dismissible" ng-show="success" >
                     <a href="#" class="close" data-dismiss="alert" ng-click="closeMsg()" aria-label="close">&times;</a>
                     {{successMessage}}
@@ -58,7 +58,7 @@
                 </script>
                 <script type="text/ng-template" id="edit">
                     <td><input type="text" ng-model="formData.user" class="form-control"  /></td>
-                    <td><input type="text" ng-model="addData.pass" class="form-control" /></td>
+                    <td><input type="password" ng-model="addData.pass" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.fullname" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.phone" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.email" class="form-control" /></td>
@@ -74,7 +74,7 @@
     </body>  
 </html>  
 <script>
-var app = angular.module('liveApp2', []);
+var app = angular.module('liveApp', []);
 
 app.controller('liveController', function($scope, $http){
 
