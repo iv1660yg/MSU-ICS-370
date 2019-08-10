@@ -1,6 +1,6 @@
 <html>  
     <head>  
-        <title>Manage Users</title>  
+        <title>Manage Cars</title>  
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>  
     </head>  
@@ -19,6 +19,7 @@
                             <tr>
                                 <th>User</th>
                                 <th>Full Name</th>
+                                <th>Password</th>
                                 <th>Phone</th>
                                 <th>Email</th>
                                 <th>Account Type</th>
@@ -26,12 +27,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="text" ng-model="addData.user" class="form-control" placeholder="Enter UserName" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.fullname" class="form-control" placeholder="Enter Full Name" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.phone" class="form-control" placeholder="Enter Phone #" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.email" class="form-control" placeholder="Enter Email" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.account_type" class="form-control" placeholder="Enter Account Type" ng-required="true" /></td>
-                               
+                                <td><input type="text" ng-model="addData.user" class="form-control" placeholder="Enter Price Per Day" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.pass" class="form-control" placeholder="Enter Make" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.fullname" class="form-control" placeholder="Enter Model" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.phone" class="form-control" placeholder="Enter Year" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.email" class="form-control" placeholder="Enter Color" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.account_type" class="form-control" placeholder="Enter Miles" ng-required="true" /></td>
+
 
 
                                 <td><button type="submit" class="btn btn-success btn-sm" ng-disabled="testform.$invalid">Add</button></td>
@@ -44,6 +46,7 @@
                 </form>
                 <script type="text/ng-template" id="display">
                     <td>{{data.user}}</td>
+                    <td>{{data.pass}}</td>
                     <td>{{data.fullname}}</td>
                     <td>{{data.phone}}</td>
                     <td>{{data.email}}</td>
@@ -55,6 +58,7 @@
                 </script>
                 <script type="text/ng-template" id="edit">
                     <td><input type="text" ng-model="formData.user" class="form-control"  /></td>
+                    <td><input type="text" ng-model="formData.pass" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.fullname" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.phone" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.email" class="form-control" /></td>
