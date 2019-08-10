@@ -28,10 +28,10 @@
                         <tbody>
                             <tr>
                                 <td><input type="text" ng-model="addData.user" class="form-control" placeholder="Enter UserName" ng-required="true" /></td>
-                                <td><input type="{{showpassword ? 'text' : 'password'}}" ng-model="addData.pass" class="form-control" placeholder="Enter Password" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.pass" class="form-control" placeholder="Enter Password" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.fullname" class="form-control" placeholder="Enter Full Name" ng-required="true" /></td>
-                                <td><input type="number" ng-model="addData.phone" class="form-control" placeholder="Enter Phone #" ng-required="true" /></td>
-                                <td><input type="email" ng-model="addData.email" class="form-control" placeholder="Enter Email" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.phone" class="form-control" placeholder="Enter Phone #" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.email" class="form-control" placeholder="Enter Email" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.account_type" class="form-control" placeholder="Enter Account Type" ng-required="true" /></td>
                                
 
@@ -58,10 +58,10 @@
                 </script>
                 <script type="text/ng-template" id="edit">
                     <td><input type="text" ng-model="formData.user" class="form-control"  /></td>
-                    <td><input type="{{showpassword ? 'text' : 'password'}}" ng-model="addData.pass" class="form-control" /></td>
+                    <td><input type="text" ng-model="addData.pass" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.fullname" class="form-control" /></td>
-                    <td><input type="number" ng-model="formData.phone" class="form-control" /></td>
-                    <td><input type="email" ng-model="formData.email" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.phone" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.email" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.account_type" class="form-control" /></td>
                     <td>
                         <input type="hidden" ng-model="formData.data.id" />
