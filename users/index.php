@@ -17,9 +17,9 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>User</th>
-                                <th>Password</th>
                                 <th>Full Name</th>
+                                <th>Password</th>
+                                <th>Address</th>
                                 <th>Phone</th>
                                 <th>Email</th>
                                 <th>Account Type</th>
@@ -27,9 +27,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="text" ng-model="addData.user" class="form-control" placeholder="Enter Price Per Day" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.fullname" class="form-control" placeholder="Enter Price Per Day" ng-required="true" /></td>
                                 <td><input type="password" ng-model="addData.pass" class="form-control" placeholder="Enter Make" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.fullname" class="form-control" placeholder="Enter Model" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.address" class="form-control" placeholder="Enter Model" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.phone" class="form-control" placeholder="Enter Year" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.email" class="form-control" placeholder="Enter Color" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.account_type" class="form-control" placeholder="Enter Miles" ng-required="true" /></td>
@@ -45,9 +45,9 @@
                     </table>
                 </form>
                 <script type="text/ng-template" id="display">
-                    <td>{{data.user}}</td>
-                    <td>{{data.pass}}</td>
                     <td>{{data.fullname}}</td>
+                    <td>{{data.pass}}</td>
+                    <td>{{data.address}}</td>
                     <td>{{data.phone}}</td>
                     <td>{{data.email}}</td>
                     <td>{{data.account_type}}</td>
@@ -57,9 +57,9 @@
                     </td>
                 </script>
                 <script type="text/ng-template" id="edit">
-                    <td><input type="text" ng-model="formData.user" class="form-control"  /></td>
+                    <td><input type="text" ng-model="formData.fullname" class="form-control"  /></td>
                     <td><input type="text" ng-model="formData.pass" class="form-control" /></td>
-                    <td><input type="text" ng-model="formData.fullname" class="form-control" /></td>
+                    <td><input type="text" ng-model="formData.address" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.phone" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.email" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.account_type" class="form-control" /></td>
