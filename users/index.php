@@ -64,7 +64,7 @@
                     <td><input type="text" ng-model="formData.email" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.account_type" class="form-control" /></td>
                     <td>
-                        <input type="hidden" ng-model="formData.data.id" />
+                        <input type="hidden" ng-model="formData.data.uid" />
                         <button type="button" class="btn btn-info btn-sm" ng-click="editData()">Save</button>
                         <button type="button" class="btn btn-default btn-sm" ng-click="reset()">Cancel</button>
                     </td>
