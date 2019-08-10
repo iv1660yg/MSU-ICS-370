@@ -1,6 +1,6 @@
 <html>  
     <head>  
-        <title>Manage Cars</title>  
+        <title>Manage Users</title>  
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>  
     </head>  
@@ -30,7 +30,7 @@
                                 <td><input type="text" ng-model="addData.user" class="form-control" placeholder="Enter UserName" ng-required="true" /></td>
                                 <td><input type="{{showpassword ? 'text' : 'password'}}" ng-model="addData.pass" class="form-control" placeholder="Enter Password" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.fullname" class="form-control" placeholder="Enter Full Name" ng-required="true" /></td>
-                                <td><input type="number" ng-model="addData.phone"  ngPattern="^[2-9]\d{2}-\d{3}-\d{4}$" class="form-control" placeholder="Enter Phone #" ng-required="true" /></td>
+                                <td><input type="number" ng-model="addData.phone"  ng-Pattern="^[2-9]\d{2}-\d{3}-\d{4}$" class="form-control" placeholder="Enter Phone #" ng-required="true" /></td>
                                 <td><input type="email" ng-model="addData.email" class="form-control" placeholder="Enter Email" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.account_type" class="form-control" placeholder="Enter Account Type" ng-required="true" /></td>
                                
@@ -60,7 +60,7 @@
                     <td><input type="text" ng-model="formData.user" class="form-control"  /></td>
                     <td><input type="{{showpassword ? 'text' : 'password'}}" ng-model="addData.pass" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.fullname" class="form-control" /></td>
-                    <td><input type="number" ng-model="formData.phone" ngPattern="^[2-9]\d{2}-\d{3}-\d{4}$" class="form-control" /></td>
+                    <td><input type="number" ng-model="formData.phone" ng-Pattern="^[2-9]\d{2}-\d{3}-\d{4}$" class="form-control" /></td>
                     <td><input type="email" ng-model="formData.email" class="form-control" /></td>
                     <td><input type="text" ng-model="formData.account_type" class="form-control" /></td>
                     <td>
