@@ -28,7 +28,7 @@
                         <tbody>
                             <tr>
                                 <td><input type="text" ng-model="addData.user" class="form-control" placeholder="Enter Price Per Day" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.pass" class="form-control" placeholder="Enter Make" ng-required="true" /></td>
+                                <td><input type="password" ng-model="addData.pass" class="form-control" placeholder="Enter Make" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.fullname" class="form-control" placeholder="Enter Model" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.phone" class="form-control" placeholder="Enter Year" ng-required="true" /></td>
                                 <td><input type="text" ng-model="addData.email" class="form-control" placeholder="Enter Color" ng-required="true" /></td>

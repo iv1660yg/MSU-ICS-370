@@ -29,7 +29,7 @@ if (isset($_POST['signup'])) {
 		$cpassword_error = "Password and Confirm Password doesn't match";
 	}
 	if (!$error) {
-		if(mysqli_query($conn, "INSERT INTO users(user, email, pass) VALUES('" . $name . "', '" . $email . "', '" . md5($password) . "')")) {
+		if(mysqli_query($conn, "INSERT INTO users(fullname, address,  phone, email, pass) VALUES('" . $name . "','" . $address . "','" . $phone . "', '" . $email . "', '" . md5($password) . "')")) {
 
 			header("Location:success.php");
 			exit();
@@ -57,13 +57,13 @@ if (isset($_POST['signup'])) {
 
 					<div class="form-group">
 						<label for="name">Address</label>
-						<input type="text" name="address" placeholder="Enter Full Address" required value="<?php if($error) echo $name; ?>" class="form-control" />
+						<input type="text" name="address" placeholder="Enter Full Address" required value="<?php if($error) echo $address; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($uaddress_error)) echo $uaddress_error; ?></span>
 					</div>
 
 					<div class="form-group">
 						<label for="name">Phone Number</label>
-						<input type="text" name="address" placeholder="Enter Phone #" required value="<?php if($error) echo $name; ?>" class="form-control" />
+						<input type="text" name="phone" placeholder="Enter Phone #" required value="<?php if($error) echo $phone; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($uphone_error)) echo $uphone_error; ?></span>
 					</div>					
 					
