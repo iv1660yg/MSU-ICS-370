@@ -9,7 +9,7 @@ $message = '';
 $form_data = json_decode(file_get_contents("php://input"));
 
 $data = array(
-    ':user'  => $form_data->user,
+    ':fullname'  => $form_data->fullname,
     ':pass'  => $form_data->pass,
     ':fullname'  => $form_data->fullname,
     ':phone'  => $form_data->phone,
