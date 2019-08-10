@@ -19,8 +19,8 @@ $data = array(
 
 $query = "
  INSERT INTO users 
- (user, pass, fullname, phone, email, account_type) VALUES 
- (:user, :pass, :fullname, :phone, :email, :account_type)
+ (fullname, pass, address, phone, email, account_type) VALUES 
+ (:fullname, :pass, :address, :phone, :email, :account_type)
 ";
 
 $statement = $connect->prepare($query);
