@@ -20,7 +20,7 @@ $data = array(
 $query = "
  INSERT INTO users 
  (fullname, pass, address, phone, email, account_type) VALUES 
- (:fullname, :pass, :address, :phone, :email, :account_type)
+ (:fullname, md5(:pass), :address, :phone, :email, :account_type)
 ";
 
 $statement = $connect->prepare($query);
