@@ -20,7 +20,7 @@ $data = array(
 
 $query = "
  UPDATE users 
- SET fullname = :fullname, pass = :pass, address = :address, phone = :phone, email = :email, account_type = :account_type   
+ SET fullname = :fullname, pass = md5(:pass), address = :address, phone = :phone, email = :email, account_type = :account_type   
  WHERE uid = :uid
 ";
 
