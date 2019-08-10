@@ -9,6 +9,8 @@ if(isset($_SESSION['user_id'])) {
 $error = false;
 if (isset($_POST['signup'])) {
 	$name = mysqli_real_escape_string($conn, $_POST['name']);
+	$address = mysqli_real_escape_string($conn, $_POST['address']);
+	$phone = mysqli_real_escape_string($conn, $_POST['phone']);
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
 	$password = mysqli_real_escape_string($conn, $_POST['password']);
 	$cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);	
