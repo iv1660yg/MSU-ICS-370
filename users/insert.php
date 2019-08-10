@@ -12,15 +12,15 @@ $data = array(
     ':user'  => $form_data->user,
     ':pass'  => $form_data->pass,
     ':fullname'  => $form_data->fullname,
-    ':email'  => $form_data->email,  
     ':phone'  => $form_data->phone,
+    ':email'  => $form_data->email,  
     ':account_type'  => $form_data->account_type
 );
 
 $query = "
  INSERT INTO users 
- (user, pass, fullname, email, phone, account_type) VALUES 
- (:user, :pass, :fullname, :email, :phone, :account_type)
+ (user, pass, fullname, phone, email, account_type) VALUES 
+ (:user, :pass, :fullname, :phone, :email, :account_type)
 ";
 
 $statement = $connect->prepare($query);
