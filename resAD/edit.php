@@ -20,7 +20,7 @@ $data = array(
 );
 
 $query = "
- UPDATE cars 
+ UPDATE reservation 
  SET userID = :userID, carID = :carID, pickupdate = :pickupdate, returndate = :returndate, destination = :destination, total = :total, statusID = :statusID      
  WHERE id = :id
 ";

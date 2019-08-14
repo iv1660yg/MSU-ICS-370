@@ -19,7 +19,7 @@ $data = array(
 );
 
 $query = "
- INSERT INTO cars 
+ INSERT INTO reservation 
  (userID, carID, pickupdate, returndate, destination, total, statusID) VALUES 
  (:userID, :carID, :pickupdate, :returndate, :destination, :total, :statusID)
 ";
