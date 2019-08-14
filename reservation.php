@@ -23,6 +23,11 @@ include_once("db_connect.php");
 				<li><a href="resAD/reservationAD.php">Make New Reservation</a></li>
 				<li><a href="profile.php">Manage Account</a></li>
 				<li><a href="logout.php">Log Out</a></li>
+				<p>
+					<center> under construction </center> 
+
+
+
 				<?php } else { ?>
 				<li><a href="login.php">Login</a></li>
 				<li><a href="register.php">Sign Up</a></li>
