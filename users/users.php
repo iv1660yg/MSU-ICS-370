@@ -15,7 +15,7 @@ include_once("../db_connect.php");
 				<?php if ((isset($_SESSION['user_id']) AND (($_SESSION['account_type'])=="admin" ) )) { ?>
 				<li><p class="navbar-text"><strong>Welcome!</strong> You're signed in as <strong><?php echo $_SESSION['user_name']; ?></strong></p></li>
 				<li><a href="users.php">Manage Users/Customers</a></li>
-				<li><a href="../resAD/reservation.php">Manage Existing Reservations</a></li>
+				<li><a href="../resAD/reservationAD.php">Manage Existing Reservations</a></li>
 				<li><a href="../cars/cars.php">Manage Cars</a></li>
 				<p>
 

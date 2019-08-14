@@ -20,7 +20,7 @@ include_once("db_connect.php");
 				<li><a href="logout.php">Log Out</a></li>
 				<?php } elseif (isset($_SESSION['user_id'])) { ?>
 				<li><p class="navbar-text"><strong>Welcome!</strong> You're signed in as <strong><?php echo $_SESSION['user_name']; ?></strong></p></li>
-				<li><a href="resAD/reservation.php">Make New Reservation</a></li>
+				<li><a href="resAD/reservationAD.php">Make New Reservation</a></li>
 				<li><a href="profile.php">Manage Account</a></li>
 				<li><a href="logout.php">Log Out</a></li>
 				<?php } else { ?>
