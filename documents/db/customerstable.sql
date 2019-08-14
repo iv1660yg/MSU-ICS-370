@@ -25,3 +25,7 @@ CREATE TABLE IF NOT EXISTS `cars` (
     `endDate` Date() NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+    `pickupdate` Date() NOT NULL,
+    `returndate` Date() NOT NULL, 
