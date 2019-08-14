@@ -28,13 +28,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="text" ng-model="addData.userID" class="form-control" placeholder="Enter Price Per Day" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.carID" class="form-control" placeholder="Enter Make" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.pickupdate" class="form-control" placeholder="Enter Model" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.returndate" class="form-control" placeholder="Enter Year" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.destination" class="form-control" placeholder="Enter Color" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.total" class="form-control" placeholder="Enter Miles" ng-required="true" /></td>
-                                <td><input type="text" ng-model="addData.statusID" class="form-control" placeholder="Enter Status" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.userID" class="form-control" placeholder="Enter UserID" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.carID" class="form-control" placeholder="Enter carID" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.pickupdate" class="form-control" placeholder="Enter Pickup Date" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.returndate" class="form-control" placeholder="Enter Return Date" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.destination" class="form-control" placeholder="Enter Destination" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.total" class="form-control" placeholder="Enter Total Coast" ng-required="true" /></td>
+                                <td><input type="text" ng-model="addData.statusID" class="form-control" placeholder="Enter reservation Status" ng-required="true" /></td>
                                
 
 
