@@ -26,14 +26,13 @@ include_once("../db_connect.php");
 				<li><a href="../logout.php">Log Out</a></li>
 				<?php } elseif ((isset($_SESSION['user_id']) AND (($_SESSION['account_type'])=="clerk" ))) { ?>
 					<li><p class="navbar-text"><strong>Welcome!</strong> You're signed in as <strong><?php echo $_SESSION['user_name']; ?></strong></p></li>
-				<li><a href="../users/users.php">Manage Users/Customers</a></li>
 				<li><a href="reservationAD.php">Manage Existing Reservations</a></li>
 				<p>
 
 				<?php 
 				require('index.php');
 				?> 
-				
+
 				<?php } elseif (isset($_SESSION['user_id'])) { ?>
 				<li><p class="navbar-text"><strong>Welcome!</strong> You're signed in as <strong><?php echo $_SESSION['user_name']; ?></strong></p></li>
 				<li><a href="../reservation.php">Make New Reservation</a></li>
